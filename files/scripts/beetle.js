@@ -208,7 +208,7 @@ jQuery(document).ready(function ($) {
     }
 
     smoothScroll();
-
+	
 
     /* Fixed header if there's no Big slider */
 
@@ -220,7 +220,7 @@ jQuery(document).ready(function ($) {
 
 
     /* Parallax data attributes according to #intro's height */
-
+///THIS IS IT
     function parallax() {
 
         if (pxWrapper.length) {
@@ -232,7 +232,7 @@ jQuery(document).ready(function ($) {
                 body.addClass('no-parallax');
 
             } else if (!body.hasClass('mobile') && !body.hasClass('no-parallax')) {
-
+////THIS IS IT
                 pxContainer.attr('data-anchor-target', '#intro-wrap');
                 pxContainer.attr('data-top', 'transform:translateY(0px);');
                 header.attr('data-anchor-target', '#intro-wrap');
@@ -248,7 +248,7 @@ jQuery(document).ready(function ($) {
                     header.attr('data-top-bottom', 'transform:translateY(' + '-' + pxWrapper.height() / 4 + 'px);');
                 }
                 animDone = false;
-
+/////THIS IS IT
                 skrollr.init({
                     forceHeight: false,
                     smoothScrolling: false,
@@ -264,6 +264,7 @@ jQuery(document).ready(function ($) {
                             if (!animDone) {
 
                                 animDone = true;
+								//THIS INSTRUCTION IS TOKEN MAGICO
                                 header.addClass('fixed-header').css({
                                     'display': 'none'
                                 }).fadeIn(300);
@@ -285,7 +286,7 @@ jQuery(document).ready(function ($) {
                     }
                     */
                 }).refresh();
-
+//////////////
                 pxImgCaption.each(function () {
 
                     var $this = $(this);
@@ -295,7 +296,7 @@ jQuery(document).ready(function ($) {
                     });
 
                 });
-
+////////////////////
             } else {
 
                 skrollr.init().destroy();
@@ -357,7 +358,7 @@ jQuery(document).ready(function ($) {
             } else {
 
                 content.css({
-                    marginTop: 0
+					marginTop: 0
                 });
 
             }
@@ -368,7 +369,7 @@ jQuery(document).ready(function ($) {
 
     parallax();
     $(window).resize(parallax);
-
+/////////////////////////////////
 
     /* Submenus */
 
@@ -1935,7 +1936,8 @@ jQuery(document).ready(function ($) {
             map.mapTypes.set('map_style', styledMap);
             map.setMapTypeId('map_style');
 
-            var contentString = '<div class="infobox-inner" style="color: ' + textcolor + ';">' + $map_info + '</div>';
+            //var contentString = '<div class="infobox-inner" style="color: ' + textcolor + ';">' + $map_info + '</div>';
+			var contentString = '<div class="infobox-inner" style="color: ' + textcolor + ';">' + $map_info + '</div>';
 
             /* Custom infowindow code; it has been replaced by the code below, using Infobox plugin
 

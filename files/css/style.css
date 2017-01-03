@@ -651,7 +651,10 @@ header.transparent.light nav > ul > li > a,
 header.fixed-header {
     position: fixed;
     top: 0;
-    height: 70px;
+    /*height: 70px;
+	TOKEN MAGICO
+	*/
+	height: 125px;
     left: 0;
     z-index: 9998;
     background-color: rgba(255, 255, 255, 0.97);
@@ -663,6 +666,7 @@ header.fixed-header {
     -ms-transform: none !important;
     -o-transform: none !important;
     transform: none !important;
+
 }
 
 #brand {
@@ -2787,7 +2791,7 @@ section.greyish {
 .fixed-nav-section{
     position: fixed;
     top: 0px;
-    height: 80px;
+    height: 125px;
 }
 
 .hero-caption-experts{
@@ -2828,7 +2832,11 @@ section.greyish {
 ----------------------------------------------------------------*/
 
 .call-to-action .row-content.buffer {
-    padding-top: 3%;
+    /*
+	padding-top: 3%;
+	
+	*/
+	padding-top: 3%;
     padding-bottom: 3%;
 }
 
@@ -4450,7 +4458,8 @@ footer .meta-social ul li a:hover {
 }
 
 footer .row-content.buffer {
-    padding-top: 2%;
+    /*padding-top: 2%;*/
+	padding-top: 2%;
     padding-bottom: 0;
 }
 
@@ -4459,7 +4468,7 @@ footer .row-content.buffer {
 }
 
 .logo-energlobal-menu{
-width: 100px;
+width: 200px;
 height: auto;
 }
 
