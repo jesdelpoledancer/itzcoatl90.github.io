@@ -1507,7 +1507,8 @@ nav ul.sub-menu > li:last-child > a {
     color:#FFFFFF;
 }
 .medium-footer{
-    background:#2290CE;
+    background:#184093;
+	/*background:#2290CE;*/
     width:25em;
     height:3em;
     color: #fff;
