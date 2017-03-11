@@ -4,6 +4,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>itzcoatl90 sitio</title>
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
 		<!-- BOOTSTRAP STYLES-->
 		<link href="assets/css/bootstrap.css" rel="stylesheet" />
 		<!-- FONTAWESOME STYLES-->
@@ -30,80 +31,77 @@
 	  <div style="color: white;
 	padding: 15px 50px 5px 50px;
 	float: right;
-	font-size: 16px;">El dia de hoy: &nbsp; <!--<strong id="date"></strong>-->
-	<a href="#" class="btn btn-danger square-btn-adjust" id="date"></a> </div>
+	font-size: 16px;">El dia de hoy: &nbsp; <a href="#" class="btn btn-danger square-btn-adjust" id="date"></a> </div>
 	<script>
 		var dat = new Date();
 		var datString = dat.getDate() + "/" + (dat.getMonth()+1) + "/" + dat.getFullYear();
 		document.getElementById("date").innerHTML = datString;
+		function DateSubsFormatted(d1, d2) {
+			var dias = Math.floor((d1 - d2)/86400000);
+			var meses = Math.floor(dias/30.4375);
+			var anos = Math.floor(meses/12);
+			var datesubformatted = "";
+			if (anos > 1) {
+				return "Hace " + anos + " años";
+			}
+			if (meses > 1) {
+				return "Hace " + meses + " meses";
+			}
+			if (dias > 1) {
+				return "Hace " + dias +" días";
+			}
+			return "Hace un día";
+		}
+		//alert(DateSubsFormatted(new Date(2017,2,8),new Date(2015,1,2)));
+		window.onload = function() {
+			document.getElementById("ManpowerTime").innerHTML="<i class=\"fa fa-clock-o fa-fw\"></i>" + DateSubsFormatted(dat,new Date(2016,9,1));
+			document.getElementById("BluemessagingTime").innerHTML="<i class=\"fa fa-clock-o fa-fw\"></i>" + DateSubsFormatted(dat,new Date(2015,4,1));
+			document.getElementById("FusionTaurinaTime").innerHTML="<i class=\"fa fa-clock-o fa-fw\"></i>" + DateSubsFormatted(dat,new Date(2013,0,1));
+			document.getElementById("GobqroTime").innerHTML="<i class=\"fa fa-clock-o fa-fw\"></i>" + DateSubsFormatted(dat,new Date(2012,5,1));
+			document.getElementById("MichelinTime").innerHTML="<i class=\"fa fa-clock-o fa-fw\"></i>" + DateSubsFormatted(dat,new Date(2011,7,1));
+			document.getElementById("AcingenieriaTime").innerHTML="<i class=\"fa fa-clock-o fa-fw\"></i>" + DateSubsFormatted(dat,new Date(2011,5,1));
+		}
 	</script>
-			</nav>   
-			   <!-- /. NAV TOP  -->
-					<nav class="navbar-default navbar-side" role="navigation">
-				<div class="sidebar-collapse">
-					<ul class="nav" id="main-menu">
+		</nav>   
+		   <!-- /. NAV TOP  -->
+				<nav class="navbar-default navbar-side" role="navigation">
+			<div class="sidebar-collapse">
+				<ul class="nav" id="main-menu">
 					<li class="text-center">
 						<img src="assets/img/find_user.png" class="user-image img-responsive"/>
-						</li>
-					
-						
-						<li>
-							<a class="active-menu"  href="index.html"><i class="fa fa-dashboard fa-3x"></i>Historia Profesional</a>
-						</li>
-						<!--<li>
-							<a  href="ui.html"><i class="fa fa-desktop fa-3x"></i> UI Elements</a>
-						</li>
-						<li>
-							<a  href="tab-panel.html"><i class="fa fa-qrcode fa-3x"></i> Tabs & Panels</a>
-						</li>
-							   <li  >
-							<a   href="chart.html"><i class="fa fa-bar-chart-o fa-3x"></i> Morris Charts</a>
-						</li>	
-						  <li  >
-							<a  href="table.html"><i class="fa fa-table fa-3x"></i> Table Examples</a>
-						</li>
-						<li  >
-							<a  href="form.html"><i class="fa fa-edit fa-3x"></i> Forms </a>
-						</li>NEEDED BUT IN CONSTRUCTION-->		
-						
-										   
-						<!--<li>
-							<a href="#"><i class="fa fa-sitemap fa-3x"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-							<ul class="nav nav-second-level">
-								<li>
-									<a href="#">Second Level Link</a>
-								</li>
-								<li>
-									<a href="#">Second Level Link</a>
-								</li>
-								<li>
-									<a href="#">Second Level Link<span class="fa arrow"></span></a>
-									<ul class="nav nav-third-level">
-										<li>
-											<a href="#">Third Level Link</a>
-										</li>
-										<li>
-											<a href="#">Third Level Link</a>
-										</li>
-										<li>
-											<a href="#">Third Level Link</a>
-										</li>
-
-									</ul>
-								   
-								</li>
-							</ul>
-						</li>
-						<li  >
-							<a  href="blank.html"><i class="fa fa-square-o fa-3x"></i> Blank Page</a>
-						</li>
-						NOT NEEDED-->						
-					</ul>
-				   
-				</div>
-				
-			</nav>  
-			<!-- /. NAV SIDE  -->
+					</li>
+					<li>
+						<a class="active-menu"  href="spanish.html"><i class="fa fa-bars fa-3x"></i>Historia Profesional</a>
+					</li>
+					<!--
+					<li>
+						<a href="#"><i class="fa fa-desktop fa-3x"></i>Portafolio<span class="fa arrow"></span></a>
+						<ul class="nav nav-second-level">
+							<li>
+								<a href="#">Independiente</a>
+							</li>
+							<li>
+								<a href="#">Proyectos propios</a>
+							</li>
+							<li>
+								<a href="#">Perfiles Online</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a  href="ui.html"><i class="fa fa-envelope-o fa-3x"></i>CV y Recomendaciones</a>
+					</li>
+					<li>
+						<a  href="tab-panel.html"><i class="fa fa-rocket fa-3x"></i>Pasatiempos</a>
+					</li>
+					<li>
+						<a   href="chart.html"><i class="fa fa-bell-o fa-3x"></i>Contacto</a>
+					</li>
+					-->
+				</ul>
+			</div>
+		</nav>  
+		<!-- /. NAV SIDE  -->
 		<div id="page-wrapper" >
 			<div id="page-inner">
 				<div class="row">
@@ -121,21 +119,34 @@
 				<hr />                
 				<div class="row">
 					<div class="col-md-4 col-sm-12 col-xs-12">
-						<br><br>
-						<div class="panel back-dash">
-							<i class="fa fa-rocket fa-3x"></i></i><strong> &nbsp; OBJETIVO</strong>
-							<p class="text-muted">
-								Estar en puesto de desarrollo de software en una empresa de giro
-								tecnológico donde se requiera un profesional que <!--se adapte a los cambios tecnológicos y que sea
-								capaz de crear software, así como--> emplee sus habilidades a la investigación, diseño, implementación y
-								mejora de soluciones a los problemas.
-							</p>
-						</div>
+						<br>
+						<div class="panel panel-default">
+								<div class="panel-heading">
+									<i class="fa fa-dashboard fa-fw"></i>&nbsp;Habilidades suaves
+								</div>
+								<div class="panel-body"> 
+									<a href="#" class="btn btn-default" style="min-width: 200px;"><small>Comunicación efectiva</small></a>
+									&nbsp;<a href="#" class="btn btn-primary btn-sm" style="min-width: 75px;"><small>Equipo</small></a><br>
+									<a href="#" class="btn btn-info btn-sm" style="min-width: 100px;"><small>Adaptabilidad</small></a>
+									<a href="#" class="btn btn-danger btn-sm" style="min-width: 75px;"><small>Liderazgo</small></a>
+									<a href="#" class="btn btn-default btn-sm" style="min-width: 110px;"><small>Reuniones</small></a><br>
+									&nbsp;<a href="#" class="btn btn-success btn-sm" style="min-width: 100px;"><small>Autodidacta</small></a>
+									<a href="#" class="btn btn-primary btn-sm" style="min-width: 70px;"><small>Disciplina</small></a>
+									<a href="#" class="btn btn-info btn-sm" style="min-width: 70px;"><small>Honestidad</small></a>
+									<a href="#" class="btn btn-info btn-sm" style="min-width: 75px;"><small>Ética</small></a><br>
+									<a href="#" class="btn btn-danger btn-sm" style="min-width: 110px;"><small>Buena actitud</small></a>
+									&nbsp;<a href="#" class="btn btn-default btn-sm" style="min-width: 110px;"><small>Pensamiento crítico</small></a>
+									<a href="#" class="btn btn-success btn-sm" style="min-width: 60px;"><small>Curiosidad</small></a><br>
+									<a href="#" class="btn btn-primary" style="min-width: 200px;"><small>Sensibilidad de usuario</small></a>
+									&nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-danger btn-sm" style="min-width: 100px;"><small>Escucha</small></a>
+									<br>
+								</div>
+							</div>
 					</div>
 					<div class="col-md-8 col-sm-12 col-xs-12">
 						<div class="panel panel-back noti-box">
 							<span class="icon-box bg-color-blue">
-								<i class="fa fa-bar-chart-o"></i>
+								<i class="fa fa-bars"></i>
 							</span>
 							<div class="text-box"  style="text-align: justify;text-justify: inter-word;">
 								<p class="main-text">RESUMEN</p>
@@ -152,128 +163,35 @@
 							</div>
 						</div>
 					</div>
-					
 				</div>
-				
-					<!-- /. ROW  -->
+				<!-- /. ROW  -->
 					<div class="row">
-					
-						<div class="col-md-3 col-sm-12 col-xs-12">
-							<div class="panel panel-primary text-center no-boder bg-color-green">
-								<div class="panel-footer back-footer-green">
-									<i class="fa fa-desktop fa-4x"></i>
-									<strong>EDUCACIÓN</strong><br>
-									Estudié Ingeniería en Sistemas Computacionales en el Tec de Monterrey Campus Querétaro (ITESM CQ) graduado en Mayo del 2013.
-								</div>
-								<div class="panel-body">
-									<i class="fa fa-comments-o fa-5x"></i>
-									<strong>CERTIFICACIONES</strong><br>
-									CCNA Networking (de Cisco) & Certified Ethical Hacker (de EC-Council).
-								</div>
-							</div>
-						</div>
-						
-						<div class="col-md-3 col-sm-12 col-xs-12">
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									Habilidades suaves
-								</div>
-								<div class="panel-body"> 
-									<a href="#" class="btn btn-default" style="min-width: 200px;"><small>Comunicación efectiva</small></a><br>
-									&nbsp;<a href="#" class="btn btn-primary btn-sm" style="min-width: 75px;"><small>Equipo</small></a>
-									<a href="#" class="btn btn-info btn-sm" style="min-width: 100px;"><small>Adaptabilidad</small></a><br>
-									<a href="#" class="btn btn-danger btn-sm" style="min-width: 75px;"><small>Liderazgo</small></a>
-									<a href="#" class="btn btn-default btn-sm" style="min-width: 110px;"><small>Reuniones</small></a><br>
-									&nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-success btn-sm" style="min-width: 100px;"><small>Autodidacta</small></a>
-									<a href="#" class="btn btn-primary btn-sm" style="min-width: 70px;"><small>Disciplina</small></a><br>
-									<a href="#" class="btn btn-info btn-sm" style="min-width: 70px;"><small>Honestidad</small></a>
-									<a href="#" class="btn btn-danger btn-sm" style="min-width: 110px;"><small>Buena actitud</small></a><br>
-									&nbsp;<a href="#" class="btn btn-default btn-sm" style="min-width: 110px;"><small>Pensamiento crítico</small></a>
-									<a href="#" class="btn btn-success btn-sm" style="min-width: 60px;"><small>Curiosidad</small></a><br>
-									<a href="#" class="btn btn-primary" style="min-width: 200px;"><small>Sensibilidad de usuario</small></a><br>
-									&nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-danger btn-sm" style="min-width: 100px;"><small>Escucha</small></a>
-									<a href="#" class="btn btn-info btn-sm" style="min-width: 75px;"><small>Ética</small></a><br>
-								</div>
-							</div>
-						</div>
-						
-						<div class="col-md-6 col-sm-12 col-xs-12" style="vertical-align: bottom;">
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									Contactame!
-								</div>
-								<div class="panel-body">
-									<div class="table-responsive">
-										<div class="input-group">
-											<span class="form-group input-group-btn">
-												<button class="btn btn-default" type="button">E-mail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-											</span>
-											<input type="text" class="form-control" value="itzcoatl90@gmail.com"/>
-										</div>
-										<br>
-										<div class="input-group">
-											<span class="form-group input-group-btn">
-												<button class="btn btn-default" type="button">Celular</button>
-											</span>
-											<input type="text" class="form-control" value="(+52) 55 4783 7380"/>
-										</div>
-										<br>
-										<div class="input-group">
-											<span class="form-group input-group-btn">
-												<button class="btn btn-default" type="button">Skype&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-											</span>
-											<input type="text" class="form-control" value="itzcoatl901"/>
-										</div>
-										<br>
-										<div class="input-group">
-											<span class="form-group input-group-btn">
-												<button class="btn btn-default" type="button">Twitter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-											</span>
-											<input type="text" class="form-control" value="@itzcoatl90"/>
-										</div>
-										<br>
-										<div class="input-group">
-											<span class="form-group input-group-btn">
-												<button class="btn btn-default" type="button">Linked In&nbsp;&nbsp;&nbsp;</button>
-											</span>
-											<input type="text" class="form-control" value="Itzcoatl Salazar"/>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-					</div>
-					<!-- /. ROW  -->
-					<div class="row" >
-					</div>
-					<!-- /. ROW  -->
-					<div class="row">
-					
 						<div class="col-md-6 col-sm-12 col-xs-12">
-							<div class="chat-panel panel panel-default chat-boder chat-panel-head" >
+							<div class="panel panel-default">
 								<div class="panel-heading">
-									<i class="fa fa-comments fa-fw"></i>
-										Últimos trabajos | Hoy: Enero - 2017
+										<i class="fa fa-edit fa-fw"></i>&nbsp;Últimos Trabajos
 								</div>
-
+								
 								<div class="panel-body">
 									<ul class="chat-box">
 										<li class="left clearfix">
 											<span class="chat-img pull-left">
 												<img src="assets/img/1.jpg" alt="User" class="img-circle" />
 											</span>
-											<div class="chat-body">
+											<div class="chat-body">                                        
 												<strong >Manpower Group</strong>
-												<small class="pull-right text-muted">
-													<i class="fa fa-clock-o fa-fw"></i>6 meses atrás
+												<small class="pull-right text-muted" id="ManpowerTime">
 												</small>                                      
 												<br>
 												<font size="1">
-													Analicé y administré varios proyectos exitosos aumentando en 20% la productividad de mi área.
-													También emergí como consultor de arquitectura de software y auditor de código de área para optimización
-													aumentando el nivel de disponibilidad de un servidor y reduciendo costo de proceso.
-													Además, dí soporte a cliente en incidentes tecnológicos mayores satisfaciendo un grupo de 70 usuarios.
+													Puesto: Líder de Proyecto de Desarrollo.<br>
+													Realicé la administración de algunos proyectos de mejora en la plataforma de Manpower para Paraguay.
+													También arreglé unos bugs en el entorno de producción relacionados con diferencias de comportamiento entre navegadores iexplorer y chrome.
+													Revicé algunos códigos en java optimizándolos y agregándoles funcionalidad. Algunos de estos códigos eran un verificador de formatos de facturas y un verificador de estado de recibos.
+													Desarrollé una aplicación (con GUI) de migración de datos entre Bases de Datos de entornos diferentes.
+													También adecué una solución para gestionar tareas de equipo de trabajo motorizado con Mantis Bug Tracker (PHP 7), estimando requisitos del servidor, conectando con los recursos disponibles
+													(SQL server, mysql, servidor SMTP, DNS de intranet) y modificando la GUI para la inclusión de algunos elementos importantes para Manpower.
+													El servicio vivía en un IIS 8 en windows server 2012.
 												</font>
 											</div>
 										</li>
@@ -282,18 +200,35 @@
 												<img src="assets/img/2.jpg" alt="User" class="img-circle" />
 											</span>
 											<div class="chat-body clearfix">
-												<small class=" text-muted">
-													<i class="fa fa-clock-o fa-fw"></i>2 años atrás
+												<small class=" text-muted" id="BluemessagingTime">
 												</small>
 												<strong class="pull-right">Bluemessaging</strong>
 												<br>
 												<font size="1">
-													Desarrollé y di mantenimiento a servlets de java EE, uno de los cuales disminuyó el tiempo de
-													un proceso de la empresa de dos horas a diez minutos. Publiqué cerca de diez Servicios Web REST y SOAP
-													para conciliaciones con nuestra base de datos. Implementé dos interfaces en html5 que mejoraban
-													un servicio hecho en una plataforma en java y automatizé casi todo el proceso núcleo administrativo del cliente
-													más importante de la empresa, proceso que involucraba alrededor de 200,000 personas 
-													produciendo un buen porcentaje de los fondos de un mes del 2015 (por el desarrollo).
+													Puesto: Desarrollador de Software.<br>
+													Desarrollé e implementé un sistema en java (1.8) con código reutilizado en PHP (5) que se conectaba al servidor del cliente mas importante via SFTP
+													para descargar paquetes comprimidos de información de cuentas (medio millon aprox de cuentas por paquete).
+													El sistema descargaba y avisaba a las personas involucradas via email, SMS y whats app acerca de la "carga", separaba la información en varios paquetes
+													más pequeños para paralelizar el análisis, 
+													las mandaba a un algoritmo de verificación y recuperación de información (diseñado por mí) para integrar la información en nuestra base de datos a travéz de una capa de servicios web de nuestra plataforma,
+													registraba todos los logs en una base de datos mysql y regresaba las cuentas con error a los usuarios por los medios antes mencionados.
+													El sistema era tolerante a fallos al trabajar en modo multithread y tener threads de monitoreo y vivía en un servidor linux de la empresa.<br>
+													Implemente una aplicación en java y un servicio web soap en php  que validaba el congruencia entre información de base de datos y la extraída de una
+													foto de identificación (INE, IFE, cédula profesional y pasaporte) para autenticación y autorización de creditos de infonavit por los beneficiarios.
+													El proceso consumía un servicio web ajeno de OCR y utilizaba una implementación de distancia de levenshtein para calcular el emparejamiento con la información extraida de la identificación con la de la Base de Datos, logrando
+													disminuir el fraude hecho por los consultores en 90%.<br>
+													Desarrollé y/o optimicé varios servicios en php, java, java EE y python que conectaban un cerebro de Procesamiento de Lenguaje Natural (NLP) con varios canales para implementar chatbots, estos canales incluyen SMS
+													(con varios proveedores), Twitter, whats app y LINE.
+													Uno de los logros de una optimización fue reducir el tiempo de respuesta de un canal de SMS de 30 segundos a 2.
+													Para conectar con los proveedores de SMS utilicé servicios web SOAP, GET y POST.
+													Para conectar con twitter utilicé la librería twitter4j de java.
+													Para conectar con LINE utilicé la API de su servicio restful con json.
+													Para Whats app utilice la libreria de python yowsup.<br>
+													Otros servicios web que implementé tenian funcionalidades como la de Conciliación entre dos bases de datos (Mysql y SQL)
+													y producción de contratos automatizados de licencias que utilizaban otras áreas internas de la empresa en PDF  con la librería iText (esto incluiye la automatización del proceso de ventas de licencias por internet de la empresa).<br>
+													También asumí un tiempo el rol de lider de proyecto y técnico, realizando levantamiento de requisitos y administrando proyectos (cabe mencionar que también desarrollaba).
+													Algunos proyectos fueron sitios web para consultas de clientes a su informacion (como los logs del sistema de infonavit) en nuestras BD de manera amigable (PHP, java EE, html, css y javascript). Uno de los sitios tenia un servicio de mapeado de rutas de trabajo de campo que utilizaba el servicio de mapas de google.<br>
+													Varios de los desarrollos incluian métodos de recuperación de fallos que utilizaban servicios web de amazon como SQS para encolar mensajes fallidos e intentar procesarlos de nuevo después y S3 para almacenamiento de archivos.
 												</font>
 											</div>
 										</li>
@@ -303,13 +238,67 @@
 											</span>
 											<div class="chat-body clearfix">
 												<strong>Fusion Taurina</strong>
-												<small class="pull-right text-muted">
-													<i class="fa fa-clock-o fa-fw"></i>3 años atrás
+												<small class="pull-right text-muted" id="FusionTaurinaTime">
 												</small>
 												<br>
 												<font size="1">
-													Desarrollé un proyecto con geo localización (parecido a foursquare, aplicado a la tauromaquia)
-													para dispositivos móviles (phonegap: html5, javascript, CSS3) siguiendo Scrum.
+													Puesto: Desarrollador de Software para móviles de medio tiempo.<br>
+													Utilicé un entorno virtualizado de Mac OS 10.8 (Mountain Lion) y un entorno de pruebas reales iPad 2 con iOS 5.0, aunque el desarrollo fue con PhoneGap 2.3.0 (Cordova)
+													y la triada web css/html/javascript. Se utilizó un Restful BaaS con json y geolocalización.
+													El proyecto se llamaba "Pasaporte Taurino", era una especie de foursquare para fanáticos de la tauromaquía, con lugares de interés relacionados con el mundo de los toros.
+												</font>
+											</div>
+										</li>
+										<li class="right clearfix">
+											<span class="chat-img pull-right">
+												<img src="assets/img/4.jpg" alt="User" class="img-circle" />
+											</span>
+											<div class="chat-body clearfix">
+												<small class=" text-muted" id="GobqroTime">
+												</small>
+												<strong class="pull-right">Estado de Querétaro</strong>
+												<br>
+												<font size="1">
+													Puesto: Practicante.<br>
+													Asumí el puesto de administrador de proyectos para la "<i>Dirección de ingresos de la secretaría de Planeación y Finanzas del Poder Ejecutivo del Estado de Querétaro</i>".
+													El proyecto se llamó "<i>Sistema de Gestión de Citas</i>" llevado a cabo con el monitoreo del "<i>Tecnológico de Monterrey campus Querétaro</i>", con el fin de dar oportunidad a los contribuyentes de agendar, cancelar y consultar citas online para diversos tipos de pago.
+													El proyecto se realizó en PHP 5.3.8 con el framework codeigniter 2.0.3-corrected-changelog. El equipo fue de 8 estudiantes, y se siguió la metodología RUP construyendo los artefactos requeridos (Documento Visión, casos de uso, especificación y diagrama de requisitos, de clase, de secuencia y de estados). Se hicieron las verificaciones, validaciones y auditorías de acuerdo al estandart de calidad ISO 9000.
+													El proyecto se logro desplegar en el sitio web de la "<i>Dirección de ingresos de la Secretaría de Planeación y Finanzas del Poder Ejecutivo del Estado de Querétaro</i>" a finales del 2012.
+												</font>
+											</div>
+										</li>
+										<li class="left clearfix">
+											<span class="chat-img pull-left">
+												<img src="assets/img/5.jpg" alt="User" class="img-circle" />
+											</span>
+											<div class="chat-body clearfix">
+												<strong>Michelin</strong>
+												<small class="pull-right text-muted" id="MichelinTime">
+												</small>
+												<br>
+												<font size="1">
+													Puesto: Becario.<br>
+													En el área de Mercadotécnia.
+													Apoye en la investigación, reunión de datos, depuración y elección de información relevante en un estudio de mercado
+													donde se intentaba sacar el posicionamiento de la empresa frente a su competencia a nivel México logrando poner
+													los resultados en porcentajes de llantas vendidas en territorio mexicano.
+												</font>
+											</div>
+										</li>
+										<li class="right clearfix">
+											<span class="chat-img pull-right">
+												<img src="assets/img/6.jpg" alt="User" class="img-circle" />
+											</span>
+											<div class="chat-body clearfix">
+												<small class=" text-muted" id="AcingenieriaTime">
+												</small>
+												<strong class="pull-right">AC Ingeniería</strong>
+												<br>
+												<font size="1">
+													Puesto: Aprendiz de Administrador de Red y Encargado de Seguridad Informática.<br>
+													Apoye en la investigación de mejores tecnologías de red y diseño de la intranet de ACIngeniería, asi como su implementación con dispositivos TP-Link y configuración de permisos logrando levantar de manera exitosa la intranet de la empresa (Wifi y cableada).
+													Tambien le di mantenimiento fisico interno a los equipos (Desktops y Laptops Intel) garantizando el buen funcionamiento de los ventiladores de algunos que fallaban.
+													Asi mismo, apoye en la documentacion del analisis de riesgos de la red para la política de seguridad de la empresa siguiendo la metodología OCTAVE-S y alineándose con el estandar ISO 27001:2005.
 												</font>
 											</div>
 										</li>
@@ -322,65 +311,215 @@
 							<div class="col-md-12">
 								<div class="panel panel-default">
 									<div class="panel-heading">
-										Habilidades Técnicas 
+										<i class="fa fa-comments fa-fw"></i>&nbsp;Lenguajes
 									</div>
 									<div class="panel-body">
 										<div class="progress">
-											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
-												Java<span class="sr-only">95% Complete (success)</span>
+											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+												Java<span class="sr-only">100% Complete (success)</span>
 											</div>
 										</div>
 										<div class="progress">
-											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-												Javascript<span class="sr-only">90% Complete (success)</span>
-											</div>
-										</div>								
-										<div class="progress">
-											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-												html / CSS<span class="sr-only">90% Complete (success)</span>
+											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+												Html<span class="sr-only">95% Complete (success)</span>
 											</div>
 										</div>
 										<div class="progress">
-											<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
-												Php<span class="sr-only">85% Complete (On fly)</span>
+											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+												Php<span class="sr-only">80% Complete (success)</span>
 											</div>
 										</div>
 										<div class="progress">
-											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
-												Servicios Web (SOAP, REST)<span class="sr-only">85% Complete (On fly)</span>
+											<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+												Javascript<span class="sr-only">80% Complete (On fly)</span>
 											</div>
 										</div>
 										<div class="progress">
-											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-												SQL / Mysql<span class="sr-only">80% Complete (On fly)</span>
-											</div>
-										</div>
-										<div class="progress">
-											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
-												Administración de proyectos<span class="sr-only">75% Complete (warning)</span>
-											</div>
-										</div>
-										<div class="progress">
-											<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
-												Patrones de diseño<span class="sr-only">75% Complete (warning)</span>
-											</div>
-										</div>
-										<div class="progress">
-											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-												Java EE<span class="sr-only">70% Complete (warning)</span>
+											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+												SQL<span class="sr-only">75% Complete (success)</span>
 											</div>
 										</div>
 										<div class="progress">
 											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-												Python<span class="sr-only">70% Complete (danger)</span>
+												UML<span class="sr-only">70% Complete (success)</span>
 											</div>
 										</div>
 										<div class="progress">
-											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
-												Scrum<span class="sr-only">65% Complete (danger)</span>
+											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%">
+												Css<span class="sr-only">55% Complete (success)</span>
 											</div>
 										</div>
-										<!-- phonegap, netbeans, eclipse, maven, tomcat, Codeigniter, ubuntu, AMAZON WEBSERVICES, Perl, github, dropbox, windows, linux, UML, Ingteligencia Artificial, Procesamiento de Lenguaje Natural, Algoritmos (Seleccion, Ordenamiento, Genéticos, Redes Neuronales, Heurísticos) -->
+										<div class="progress">
+											<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%">
+												Python<span class="sr-only">55% Complete (On fly)</span>
+											</div>
+										</div>
+										<!--Perl,RDML-->
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-md-6 col-sm-12 col-xs-12">
+							<div class="col-md-12">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<i class="fa fa-qrcode fa-fw"></i>&nbsp;IDEs, Frameworks y Librerias
+									</div>
+									<div class="panel-body">
+										<div class="progress">
+											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+												NetBeans<span class="sr-only">95% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+												javax.swing<span class="sr-only">90% Complete (success)</span>
+											</div>
+										</div>								
+										<div class="progress">
+											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+												Eclipse<span class="sr-only">80% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+												twitter4j<span class="sr-only">80% Complete (On fly)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+												java iText<span class="sr-only">60% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 35%">
+												Codeigniter<span class="sr-only">35% Complete (success)</span>
+											</div>
+										</div>								
+										<div class="progress">
+											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+												Phonegap<span class="sr-only">30% Complete (success)</span>
+											</div>
+										</div>
+										<!--Maven,Yowsup,LANSA-->
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-md-6 col-sm-12 col-xs-12">
+							<div class="col-md-12">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<i class="fa fa-bar-chart-o fa-fw"></i>&nbsp;Sistemas, Servidores y Herramientas
+									</div>
+									<div class="panel-body">
+										<div class="progress">
+											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+												Google Chrome (debugger)<span class="sr-only">80% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+												MySQL<span class="sr-only">70% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+												Apache server (http,mysql,tomcat)<span class="sr-only">70% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+												Sql server (2008,2012)<span class="sr-only">40% Complete (On fly)</span>
+											</div>
+										</div>
+										<!--DNS server and Registers,IIS 8,Google Maps API,STMP server,ODBC Drivers,Amazon web services API-->
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-md-6 col-sm-12 col-xs-12">
+							<div class="col-md-12">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<i class="fa fa-sitemap fa-fw"></i>&nbsp;SO, Metodologías y Estándares
+									</div>
+									<div class="panel-body">
+										<div class="progress">
+											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+												Servicios Web REST (GET,POST,SOAP)<span class="sr-only">95% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+												Ubuntu Server (10.04.4, 12.10)<span class="sr-only">90% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+												Servicios Web Restful<span class="sr-only">80% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+												Scrum<span class="sr-only">75% Complete (On fly)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+												Rup<span class="sr-only">60% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+												Java EE<span class="sr-only">45% Complete (success)</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-md-6 col-sm-12 col-xs-12">
+							<div class="col-md-12">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<i class="fa fa-table fa-fw"></i>&nbsp;Seguridad de la Información como Pasatiempo
+									</div>
+									<div class="panel-body">
+										<div class="progress">
+											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+												Criptología (Criptografía y Criptoanálisis)<span class="sr-only">100% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+												Esteganografía<span class="sr-only">90% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+												Pentesting (Web, Aplicación, Redes y SO)<span class="sr-only">80% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+												Análisis de Riesgos<span class="sr-only">65% Complete (On fly)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%">
+												Ingeniería Inversa<span class="sr-only">55% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+												Ingeniería Forense<span class="sr-only">50% Complete (success)</span>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -389,22 +528,22 @@
 					</div>
 					
 				</div>
-				 <!-- /. PAGE INNER  -->
+				<!-- /. PAGE INNER  -->
 			</div>
-		<!-- /. PAGE WRAPPER  -->
+			<!-- /. PAGE WRAPPER  -->
 		</div>
 		<!-- /. WRAPPER  -->
-		<!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-		<!-- JQUERY SCRIPTS -->
-		<script src="assets/js/jquery-1.10.2.js"></script>
-		<!-- BOOTSTRAP SCRIPTS -->
-		<script src="assets/js/bootstrap.min.js"></script>
-		<!-- METISMENU SCRIPTS -->
-		<script src="assets/js/jquery.metisMenu.js"></script>
-		<!-- MORRIS CHART SCRIPTS -->
-		<script src="assets/js/morris/raphael-2.1.0.min.js"></script>
-		<script src="assets/js/morris/morris.js"></script>
-		<!-- CUSTOM SCRIPTS -->
-		<script src="assets/js/custom.js"></script>
-	</body>
+	<!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+	<!-- JQUERY SCRIPTS -->
+	<script src="assets/js/jquery-1.10.2.js"></script>
+	<!-- BOOTSTRAP SCRIPTS -->
+	<script src="assets/js/bootstrap.min.js"></script>
+	<!-- METISMENU SCRIPTS -->
+	<script src="assets/js/jquery.metisMenu.js"></script>
+	<!-- MORRIS CHART SCRIPTS -->
+	<script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+	<script src="assets/js/morris/morris.js"></script>
+	<!-- CUSTOM SCRIPTS -->
+	<script src="assets/js/custom.js"></script>
+</body>
 </html>

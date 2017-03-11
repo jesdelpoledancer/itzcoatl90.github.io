@@ -1,105 +1,105 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-      <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>itzcoatl90 site</title>
-	<!-- BOOTSTRAP STYLES-->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-     <!-- FONTAWESOME STYLES-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
-     <!-- MORRIS CHART STYLES-->
-    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
-        <!-- CUSTOM STYLES-->
-    <link href="assets/css/custom.css" rel="stylesheet" />
-     <!-- GOOGLE FONTS-->
-   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-</head>
-<body>
-    <div id="wrapper">
-        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="spanish.html">Español</a> 
-            </div>
-  <div style="color: white;
-padding: 15px 50px 5px 50px;
-float: right;
-font-size: 16px;">Today is:   &nbsp; <a href="#" class="btn btn-danger square-btn-adjust" id="date"></a> </div>
+	<head>
+		 <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>itzcoatl90 site</title>
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+		<!-- BOOTSTRAP STYLES-->
+		<link href="assets/css/bootstrap.css" rel="stylesheet" />
+		<!-- FONTAWESOME STYLES-->
+		<link href="assets/css/font-awesome.css" rel="stylesheet" />
+		<!-- MORRIS CHART STYLES-->
+		<link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+		<!-- CUSTOM STYLES-->
+		<link href="assets/css/custom.css" rel="stylesheet" />
+		<!-- GOOGLE FONTS-->
+	   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+	</head>
+	<body>
+		<div id="wrapper">
+			<nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="spanish.html">Español</a> 
+				</div>
+	  <div style="color: white;
+	padding: 15px 50px 5px 50px;
+	float: right;
+	font-size: 16px;">Today is:   &nbsp; <a href="#" class="btn btn-danger square-btn-adjust" id="date"></a> </div>
 	<script>
 		var dat = new Date();
 		var datString = dat.getDate() + "/" + (dat.getMonth()+1) + "/" + dat.getFullYear();
 		document.getElementById("date").innerHTML = datString;
+		function DateSubsFormatted(d1, d2) {
+			var dias = Math.floor((d1 - d2)/86400000);
+			var meses = Math.floor(dias/30.4375);
+			var anos = Math.floor(meses/12);
+			var datesubformatted = "";
+			if (anos > 1) {
+				return anos + " years ago";
+			}
+			if (meses > 1) {
+				return meses + " months ago";
+			}
+			if (dias > 1) {
+				return dias +" days ago";
+			}
+			return "A day ago";
+		}
+		//alert(DateSubsFormatted(new Date(2017,2,8),new Date(2015,1,2)));
+		window.onload = function() {
+			document.getElementById("ManpowerTime").innerHTML="<i class=\"fa fa-clock-o fa-fw\"></i>" + DateSubsFormatted(dat,new Date(2016,9,1));
+			document.getElementById("BluemessagingTime").innerHTML="<i class=\"fa fa-clock-o fa-fw\"></i>" + DateSubsFormatted(dat,new Date(2015,4,1));
+			document.getElementById("FusionTaurinaTime").innerHTML="<i class=\"fa fa-clock-o fa-fw\"></i>" + DateSubsFormatted(dat,new Date(2013,0,1));
+			document.getElementById("GobqroTime").innerHTML="<i class=\"fa fa-clock-o fa-fw\"></i>" + DateSubsFormatted(dat,new Date(2012,5,1));
+			document.getElementById("MichelinTime").innerHTML="<i class=\"fa fa-clock-o fa-fw\"></i>" + DateSubsFormatted(dat,new Date(2011,7,1));
+			document.getElementById("AcingenieriaTime").innerHTML="<i class=\"fa fa-clock-o fa-fw\"></i>" + DateSubsFormatted(dat,new Date(2011,5,1));
+		}
 	</script>
         </nav>   
            <!-- /. NAV TOP  -->
                 <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
-				<li class="text-center">
-                    <img src="assets/img/find_user.png" class="user-image img-responsive"/>
+					<li class="text-center">
+						<img src="assets/img/find_user.png" class="user-image img-responsive"/>
 					</li>
-				
-					
                     <li>
-                        <a class="active-menu"  href="index.html"><i class="fa fa-dashboard fa-3x"></i>Professional history</a>
+                        <a class="active-menu"  href="index.html"><i class="fa fa-bars fa-3x"></i>Professional history</a>
                     </li>
-                    <!--<li>
-                        <a  href="ui.html"><i class="fa fa-desktop fa-3x"></i> UI Elements</a>
-                    </li>
-                    <li>
-                        <a  href="tab-panel.html"><i class="fa fa-qrcode fa-3x"></i> Tabs & Panels</a>
-                    </li>
-						   <li  >
-                        <a   href="chart.html"><i class="fa fa-bar-chart-o fa-3x"></i> Morris Charts</a>
-                    </li>	
-                      <li  >
-                        <a  href="table.html"><i class="fa fa-table fa-3x"></i> Table Examples</a>
-                    </li>
-                    <li  >
-                        <a  href="form.html"><i class="fa fa-edit fa-3x"></i> Forms </a>
-                    </li>NEEDED BUT IN CONSTRUCTION-->			
-					
-					                   
-                    <!--<li>
-                        <a href="#"><i class="fa fa-sitemap fa-3x"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-
-                                </ul>
-                               
-                            </li>
-                        </ul>
-                    </li>  
-					<li  >
-                        <a  href="blank.html"><i class="fa fa-square-o fa-3x"></i> Blank Page</a>
-                    </li> NOT NEEDED-->
+                    <!--
+					<li>
+						<a href="#"><i class="fa fa-desktop fa-3x"></i>Portfolio<span class="fa arrow"></span></a>
+						<ul class="nav nav-second-level">
+							<li>
+								<a href="#">Freelance</a>
+							</li>
+							<li>
+								<a href="#">Own Projects</a>
+							</li>
+							<li>
+								<a href="#">Online Profiles</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a  href="ui.html"><i class="fa fa-envelope-o fa-3x"></i>CV and Recommendations</a>
+					</li>
+					<li>
+						<a  href="tab-panel.html"><i class="fa fa-rocket fa-3x"></i>Hobbies</a>
+					</li>
+					<li>
+						<a   href="chart.html"><i class="fa fa-bell-o fa-3x"></i>Contact</a>
+					</li>
+					-->
                 </ul>
-               
             </div>
-            
         </nav>  
         <!-- /. NAV SIDE  -->
 		<div id="page-wrapper" >
@@ -119,20 +119,34 @@ font-size: 16px;">Today is:   &nbsp; <a href="#" class="btn btn-danger square-bt
 				<hr />                
 				<div class="row">
 					<div class="col-md-4 col-sm-12 col-xs-12">
-						<br><br>
-						<div class="panel back-dash">
-							<i class="fa fa-rocket fa-3x"></i></i><strong> &nbsp; OBJECTIVE</strong>
-							<p class="text-muted">
-								To fill a software developer position on a technology organization, where is 
-								required a professional <!--who adapts to technological changes and is able to create software, as
-								well as--> that employs his skills to research, design, implement and improve of solutions to problems.
-							</p>
-						</div>
+						<br>
+						<div class="panel panel-default">
+								<div class="panel-heading">
+									<i class="fa fa-dashboard fa-fw"></i>&nbsp;Soft Skills
+								</div>
+								<div class="panel-body"> 
+									<a href="#" class="btn btn-default" style="min-width: 200px;">Effective Communication</a>
+									&nbsp;<a href="#" class="btn btn-primary btn-sm" style="min-width: 75px;">Teamwork</a><br>
+									<a href="#" class="btn btn-info btn-sm" style="min-width: 100px;">Adaptability</a>
+									<a href="#" class="btn btn-danger btn-sm" style="min-width: 75px;">Leadership</a>
+									<a href="#" class="btn btn-default btn-sm" style="min-width: 110px;">Meeting skill</a><br>
+									&nbsp;<a href="#" class="btn btn-success btn-sm" style="min-width: 100px;">Autodidactism</a>
+									<a href="#" class="btn btn-primary btn-sm" style="min-width: 70px;">Discipline</a>
+									<a href="#" class="btn btn-info btn-sm" style="min-width: 70px;">Honesty</a>
+									<a href="#" class="btn btn-info btn-sm" style="min-width: 75px;">Ethics</a><br>
+									<a href="#" class="btn btn-danger btn-sm" style="min-width: 110px;">Good Attitude</a>
+									<a href="#" class="btn btn-default btn-sm" style="min-width: 110px;">Critical Thinking</a>
+									<a href="#" class="btn btn-success btn-sm" style="min-width: 60px;">Curiosity</a><br>
+									<a href="#" class="btn btn-primary" style="min-width: 200px;">User sensitivity</a>
+									&nbsp;&nbsp;<a href="#" class="btn btn-danger btn-sm" style="min-width: 100px;">Listening</a>
+									
+								</div>
+							</div>
 					</div>
 					<div class="col-md-8 col-sm-12 col-xs-12">
 						<div class="panel panel-back noti-box">
 							<span class="icon-box bg-color-blue">
-								<i class="fa fa-bar-chart-o"></i>
+								<i class="fa fa-bars"></i>
 							</span>
 							<div class="text-box"  style="text-align: justify;text-justify: inter-word;">
 								<p class="main-text">SUMMARY </p>
@@ -150,143 +164,15 @@ font-size: 16px;">Today is:   &nbsp; <a href="#" class="btn btn-danger square-bt
 						</div>
 					</div>
 				</div>
-				
-					<!-- /. ROW  -->
+				<!-- /. ROW  -->
 					<div class="row">
-					
-						<div class="col-md-3 col-sm-12 col-xs-12">
-							<div class="panel panel-primary text-center no-boder bg-color-green">
-								<div class="panel-footer back-footer-green">
-									<i class="fa fa-desktop fa-4x"></i>
-									<strong>EDUCATION</strong><br>
-									I studied Computer Systems Engineering at the Tec de Monterrey Campus Querétaro (ITESM CQ) graduated in May 2013.
-								</div>
-								<div class="panel-body">
-									<i class="fa fa-comments-o fa-5x"></i>
-									<strong>CERTIFICATIONS</strong><br>
-									CCNA Networking (from Cisco) & Certified Ethical Hacker (from EC-Council).
-								</div>
-							</div>
-						</div>
-						
-						<div class="col-md-3 col-sm-12 col-xs-12">
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									Soft Skills & Other Stuff
-								</div>
-								<div class="panel-body"> 
-									<a href="#" class="btn btn-default" style="min-width: 200px;">Effective Communication</a><br>
-									&nbsp;<a href="#" class="btn btn-primary btn-sm" style="min-width: 75px;">Teamwork</a>
-									<a href="#" class="btn btn-info btn-sm" style="min-width: 100px;">Adaptability</a><br>
-									<a href="#" class="btn btn-danger btn-sm" style="min-width: 75px;">Leadership</a>
-									<a href="#" class="btn btn-default btn-sm" style="min-width: 110px;">Meeting skill</a><br>
-									&nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-success btn-sm" style="min-width: 100px;">Autodidactism</a>
-									<a href="#" class="btn btn-primary btn-sm" style="min-width: 70px;">Discipline</a><br>
-									<a href="#" class="btn btn-info btn-sm" style="min-width: 70px;">Honesty</a>
-									<a href="#" class="btn btn-danger btn-sm" style="min-width: 110px;">Good Attitude</a><br>
-									&nbsp;<a href="#" class="btn btn-default btn-sm" style="min-width: 110px;">Critical Thinking</a>
-									<a href="#" class="btn btn-success btn-sm" style="min-width: 60px;">Curiosity</a><br>
-									<a href="#" class="btn btn-primary" style="min-width: 200px;">User sensitivity</a><br>
-									&nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-danger btn-sm" style="min-width: 100px;">Listening</a>
-									<a href="#" class="btn btn-info btn-sm" style="min-width: 75px;">Ethics</a><br>
-									
-								</div>
-							</div>
-						</div>
-						
-						<div class="col-md-6 col-sm-12 col-xs-12" style="vertical-align: bottom;">
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									Contact me!
-								</div>
-								<div class="panel-body">
-									<div class="table-responsive">
-										<div class="input-group">
-											<span class="form-group input-group-btn">
-												<button class="btn btn-default" type="button">E-mail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-											</span>
-											<input type="text" class="form-control" value="itzcoatl90@gmail.com"/>
-										</div>
-										<br>
-										<div class="input-group">
-											<span class="form-group input-group-btn">
-												<button class="btn btn-default" type="button">Cell phone</button>
-											</span>
-											<input type="text" class="form-control" value="(+52) 55 4783 7380"/>
-										</div>
-										<br>
-										<div class="input-group">
-											<span class="form-group input-group-btn">
-												<button class="btn btn-default" type="button">Skype&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-											</span>
-											<input type="text" class="form-control" value="itzcoatl901"/>
-										</div>
-										<br>
-										<div class="input-group">
-											<span class="form-group input-group-btn">
-												<button class="btn btn-default" type="button">Twitter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-											</span>
-											<input type="text" class="form-control" value="@itzcoatl90"/>
-										</div>
-										<br>
-										<div class="input-group">
-											<span class="form-group input-group-btn">
-												<button class="btn btn-default" type="button">Linked In&nbsp;&nbsp;&nbsp;</button>
-											</span>
-											<input type="text" class="form-control" value="Itzcoatl Salazar"/>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-					</div>
-					<!-- /. ROW  -->
-					<div class="row" >
-					</div>
-					<!-- /. ROW  -->
-					<div class="row">
-					
 						<div class="col-md-6 col-sm-12 col-xs-12">
-							<div class="chat-panel panel panel-default chat-boder chat-panel-head" >
+							<div class="panel panel-default">
 								<div class="panel-heading">
 									<i class="fa fa-comments fa-fw"></i>
-										Last works | Today: January - 2017
-									<div class="btn-group pull-right">
-										<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-											<i class="fa fa-chevron-down"></i>
-										</button>
-										<ul class="dropdown-menu slidedown">
-											<li>
-												<a href="#">
-													<i class="fa fa-refresh fa-fw"></i>Refresh
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													<i class="fa fa-check-circle fa-fw"></i>Available
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													<i class="fa fa-times fa-fw"></i>Busy
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													<i class="fa fa-clock-o fa-fw"></i>Away
-												</a>
-											</li>
-											<li class="divider"></li>
-											<li>
-												<a href="#">
-													<i class="fa fa-sign-out fa-fw"></i>Sign Out
-												</a>
-											</li>
-										</ul>
-									</div>
+										<i class="fa fa-edit fa-fw"></i>&nbsp;Last works
 								</div>
-
+								
 								<div class="panel-body">
 									<ul class="chat-box">
 										<li class="left clearfix">
@@ -295,16 +181,18 @@ font-size: 16px;">Today is:   &nbsp; <a href="#" class="btn btn-danger square-bt
 											</span>
 											<div class="chat-body">                                        
 												<strong >Manpower Group</strong>
-												<small class="pull-right text-muted">
-													<i class="fa fa-clock-o fa-fw"></i>6 months ago
+												<small class="pull-right text-muted" id="ManpowerTime">
 												</small>                                      
 												<br>
 												<font size="1">
-													I analyzed and managed several successful projects increasing 20% productivity of my area.
-													I also emerged as software architect consultant and code auditor on my area for optimization
-													increasing one of our servers' availability and reducing process cost.
-													In addition, I give support on mayor technological incidents to client, satisfying a group of
-													70 users.
+													Position: Project development leader.<br>
+													I performed the administration of some improvement projects on the Manpower platform for Paraguay.
+													I also, fixed some bugs in production environment related to behavioral differences between iexplorer and chrome browsers.
+													I reviewed some java code optimizing and adding functionality. Some of these codes were a bill format verifier and a receipt status checker.
+													I developed a java application (with GUI) for data migration between different environment Data Bases.
+													I also adapted a solution to manage teamwork tasks powered by Mantis Bug Tracker (PHP 7), estimating server requirements, connecting with available resources
+													(SQL server, mysql, SMTP server, intranet DNS) and modifying the GUI for inclusion of some Manpower important elements.
+													This manager lived in a IIS 8 in windows server 2012.
 												</font>
 											</div>
 										</li>
@@ -313,16 +201,35 @@ font-size: 16px;">Today is:   &nbsp; <a href="#" class="btn btn-danger square-bt
 												<img src="assets/img/2.jpg" alt="User" class="img-circle" />
 											</span>
 											<div class="chat-body clearfix">
-												<small class=" text-muted">
-													<i class="fa fa-clock-o fa-fw"></i>2 years ago</small>
+												<small class=" text-muted" id="BluemessagingTime">
+												</small>
 												<strong class="pull-right">Bluemessaging</strong>
 												<br>
 												<font size="1">
-													I developed and gave maintenance to java EE Servlets, one of them decrease the time a process took from 
-													two hours to ten minutes. I published near to ten REST and SOAP web services for conciliation to our database.
-													I implemented two html5 front ends that enhanced a java-based platform service and automatize almost all of the
-													core administrative process of one of the most important client for the organization, Process that involves
-													around 200,000 people and producing a good percentaje of the profits in a month of 2015 (for development).
+													Position: Software developer.<br>
+													I developed and implemented a java (1.8) system with reused PHP (5) code that connects to the most important client's server via SFTP
+													in order to check and retrieve compressed packages with accounts information (around half a million accounts per package).
+													The system downloaded and warned people involved on the process via email, SMS and whats app about these "loads", then divided the information in several smaller 
+													packages in order to paralelize the analysis,
+													send them to a data verifier and recovery of damaged data algorithm (designed by me) to be integrated to our database throught a web services Layer of our platform.
+													It then register all logs in a Mysql database and send accounts with irrecuperable errors back to the users by the aforementioned routes.
+													This system was fault tolerant by working in multithread mode and having monitoring threads and lived in a linux server of the company.<br>
+													I implemented a java application and php web soap service that validate the match between data base information and data extracted from an 
+													identification photo (INE, IFE, professional cedula and passport) for authentication and authorization of infonavit credits by the accredited people.
+													The process consumed a foreign OCR web service and used a levenshtein distance implementation to calculate the match of the identification extraction information with our database's, managing to
+													reduce infonavit consultants' frauds in 90%.<br>
+													I also developed and/or optimized some services in php, java, java EE and python that connected a Natural Language Processing (NLP) brain with several channels to implement chatbots, these channels include SMS
+													(with multiple SMS providers), Twitter, whats App and LINE.
+													One of the achievements of an optimization was reducing a SMS channel response time from 30 seconds to 2.
+													To connect with SMS providers I used SOAP, GET and POST web services.
+													To connect with twitter I used the java twitter4j library.
+													To connect with LINE I used their restfull service API with json.
+													To connect with Whats app I used the yowsup python library.<br>
+													Other web services that I implemented had functionalities such as the Conciliation between two databases (Mysql and SQL) 
+													and production of automated licensing contracts that used other internal areas of the company in PDF with iText library (this included the automation of the internet licenses sales process of the company).<br>
+													I Also assume the role of project and technical leader, performing requirement engineering and managing some projects (it should be mentioned that I was also developer).
+													Some projects were websites for customer consult (such as the logs of the infonavit account system) to their information in our DB in a friendly way (PHP, java EE, html, css and javascript). One of the sites had a fieldwork routes mapping that used the google maps service.<br>
+													Some of the developments included fail recovery methods that used amazon web services like SQS to queue fail sended messages and try to send them again later and S3 for file storage.
 												</font>
 											</div>
 										</li>
@@ -332,13 +239,67 @@ font-size: 16px;">Today is:   &nbsp; <a href="#" class="btn btn-danger square-bt
 											</span>
 											<div class="chat-body clearfix">
 												<strong>Fusion Taurina</strong>
-												<small class="pull-right text-muted">
-													<i class="fa fa-clock-o fa-fw"></i>3 years ago
+												<small class="pull-right text-muted" id="FusionTaurinaTime">
 												</small>
 												<br>
 												<font size="1">
-													I develop a project with geo location (like foursquare aimed to bull's fans)
-													for mobile devices (phonegap: html5, javascript, CSS3) following Scrum.
+													Position: Half-Time mobile software developer.<br>
+													I used a virtualized Mac OS 10.8 (Mountain Lion) environment and a real iPad 2 testing environment with iOS 5.0, although the development was with PhoneGap 2.3.0 (Cordova)
+													and css/html/javascript web triangle. It used a Restful json BaaS and geolocation.
+													The project was called "Pasaporte taurino", and it was a kind of foursquare for bullfighting fans, with places of interest related to the bulls' world.
+												</font>
+											</div>
+										</li>
+										<li class="right clearfix">
+											<span class="chat-img pull-right">
+												<img src="assets/img/4.jpg" alt="User" class="img-circle" />
+											</span>
+											<div class="chat-body clearfix">
+												<small class=" text-muted" id="GobqroTime">
+												</small>
+												<strong class="pull-right">Estado de Querétaro</strong>
+												<br>
+												<font size="1">
+													Position: Practitioner.<br>
+													With a role of Project Manager in a project for the "<i>Dirección de ingresos de la Secretaría de Planeación y Finanzas del Poder Ejecutivo del Estado de Querétaro</i>".
+													The project was called "<i>Sistema de Gestión de Citas</i>" carried out with the monitoring of the "<i>Tecnológico de Monterrey campus Querétaro</i>", in order to give opportunity to taxpayers to online schedule, cancel and consult of appointments for various types of payments.
+													The project was developed in PHP 5.3.8 with the framework codeigniter 2.0.3-corrected-changelog. The team size was 8 students, following the RUP methodology constructing the required artifacts (Vision Document, use cases, specification and diagram of requirements, class, sequence and states diagrams). Verification, validation and auditoring were carried out according to the ISO 9000 quality standard.
+													The project was deployed on the official website of the "<i>Dirección de ingresos de la Secretaría de Planeación y Finanzas del Poder Ejecutivo del Estado de Querétaro</i>" by the end of 2012.
+												</font>
+											</div>
+										</li>
+										<li class="left clearfix">
+											<span class="chat-img pull-left">
+												<img src="assets/img/5.jpg" alt="User" class="img-circle" />
+											</span>
+											<div class="chat-body clearfix">
+												<strong>Michelin</strong>
+												<small class="pull-right text-muted" id="MichelinTime">
+												</small>
+												<br>
+												<font size="1">
+													Position: Scholar.<br>
+													In the Marketing area.
+													I support in the investigation, data collection, cleaning and choice of relevant information in a market study 
+													where it was tried to get the positioning of the company against its competition in Mexico and managed to put the 
+													results in percentages of solded tires in Mexican territory.
+												</font>
+											</div>
+										</li>
+										<li class="right clearfix">
+											<span class="chat-img pull-right">
+												<img src="assets/img/6.jpg" alt="User" class="img-circle" />
+											</span>
+											<div class="chat-body clearfix">
+												<small class=" text-muted" id="AcingenieriaTime">
+												</small>
+												<strong class="pull-right">AC Ingeniería</strong>
+												<br>
+												<font size="1">
+													Position: Network administrator and security manager trainee.<br>
+													I support in the investigation of best networking technologies and intranet design for ACIngeniería, as well as its implementation with TP-Link devices and configuration of permissions, successfully managing the company's intranet (Wifi and cable).
+													I also gave physical internally maintenance to the equipment (Intel Desktops and Laptops) guaranteeing the good functioning of the cooling fans of some of them that failed.
+													Also, support the documentation of network risk analysis for the company's security policy following the OCTAVE-S methodology and aligning with the ISO 27001: 2005 standard.
 												</font>
 											</div>
 										</li>
@@ -351,65 +312,215 @@ font-size: 16px;">Today is:   &nbsp; <a href="#" class="btn btn-danger square-bt
 							<div class="col-md-12">
 								<div class="panel panel-default">
 									<div class="panel-heading">
-										Technical Skills 
+										<i class="fa fa-comments fa-fw"></i>&nbsp;Languages
 									</div>
 									<div class="panel-body">
 										<div class="progress">
-											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
-												Java<span class="sr-only">95% Complete (success)</span>
+											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+												Java<span class="sr-only">100% Complete (success)</span>
 											</div>
 										</div>
 										<div class="progress">
-											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-												Javascript<span class="sr-only">90% Complete (success)</span>
-											</div>
-										</div>								
-										<div class="progress">
-											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-												html / CSS<span class="sr-only">90% Complete (success)</span>
+											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+												Html<span class="sr-only">95% Complete (success)</span>
 											</div>
 										</div>
 										<div class="progress">
-											<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
-												Php<span class="sr-only">85% Complete (On fly)</span>
+											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+												Php<span class="sr-only">80% Complete (success)</span>
 											</div>
 										</div>
 										<div class="progress">
-											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
-												Web Services (SOAP, REST)<span class="sr-only">85% Complete (On fly)</span>
+											<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+												Javascript<span class="sr-only">80% Complete (On fly)</span>
 											</div>
 										</div>
 										<div class="progress">
-											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-												SQL / Mysql<span class="sr-only">80% Complete (On fly)</span>
-											</div>
-										</div>
-										<div class="progress">
-											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
-												Project Management<span class="sr-only">75% Complete (warning)</span>
-											</div>
-										</div>
-										<div class="progress">
-											<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
-												Design Patterns<span class="sr-only">75% Complete (warning)</span>
-											</div>
-										</div>
-										<div class="progress">
-											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-												Java EE<span class="sr-only">70% Complete (warning)</span>
+											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+												SQL<span class="sr-only">75% Complete (success)</span>
 											</div>
 										</div>
 										<div class="progress">
 											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-												Python<span class="sr-only">70% Complete (danger)</span>
+												UML<span class="sr-only">70% Complete (success)</span>
 											</div>
 										</div>
 										<div class="progress">
-											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
-												Scrum<span class="sr-only">65% Complete (danger)</span>
+											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%">
+												Css<span class="sr-only">55% Complete (success)</span>
 											</div>
 										</div>
-										<!-- phonegap, netbeans, eclipse, maven, tomcat, Codeigniter, ubuntu, AMAZON WEBSERVICES, Perl, github, dropbox, windows, linux, UML, Ingteligencia Artificial, Procesamiento de Lenguaje Natural, Algoritmos (Seleccion, Ordenamiento, Genéticos, Redes Neuronales, Heurísticos) -->
+										<div class="progress">
+											<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%">
+												Python<span class="sr-only">55% Complete (On fly)</span>
+											</div>
+										</div>
+										<!--Perl,RDML-->
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-md-6 col-sm-12 col-xs-12">
+							<div class="col-md-12">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<i class="fa fa-qrcode fa-fw"></i>&nbsp;IDEs, Frameworks and Libraries
+									</div>
+									<div class="panel-body">
+										<div class="progress">
+											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+												NetBeans<span class="sr-only">95% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+												javax.swing<span class="sr-only">90% Complete (success)</span>
+											</div>
+										</div>								
+										<div class="progress">
+											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+												Eclipse<span class="sr-only">80% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+												twitter4j<span class="sr-only">80% Complete (On fly)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+												java iText<span class="sr-only">60% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 35%">
+												Codeigniter<span class="sr-only">35% Complete (success)</span>
+											</div>
+										</div>								
+										<div class="progress">
+											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+												Phonegap<span class="sr-only">30% Complete (success)</span>
+											</div>
+										</div>
+										<!--Maven,Yowsup,LANSA-->
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-md-6 col-sm-12 col-xs-12">
+							<div class="col-md-12">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<i class="fa fa-bar-chart-o fa-fw"></i>&nbsp;Systems, Servers and Tools
+									</div>
+									<div class="panel-body">
+										<div class="progress">
+											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+												Google Chrome (debugger)<span class="sr-only">80% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+												MySQL<span class="sr-only">70% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+												Apache server (http,mysql,tomcat)<span class="sr-only">70% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+												Sql server (2008,2012)<span class="sr-only">40% Complete (On fly)</span>
+											</div>
+										</div>
+										<!--DNS server and Registers,IIS 8,Google Maps API,STMP server,ODBC Drivers,Amazon web services API-->
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-md-6 col-sm-12 col-xs-12">
+							<div class="col-md-12">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<i class="fa fa-sitemap fa-fw"></i>&nbsp;OS, Methodologies and Standards
+									</div>
+									<div class="panel-body">
+										<div class="progress">
+											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+												REST web services (GET,POST,SOAP)<span class="sr-only">95% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+												Ubuntu Server (10.04.4, 12.10)<span class="sr-only">90% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+												Restful web services<span class="sr-only">80% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+												Scrum<span class="sr-only">75% Complete (On fly)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+												Rup<span class="sr-only">60% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+												Java EE<span class="sr-only">45% Complete (success)</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-md-6 col-sm-12 col-xs-12">
+							<div class="col-md-12">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<i class="fa fa-table fa-fw"></i>&nbsp;Information Security as Hobbie
+									</div>
+									<div class="panel-body">
+										<div class="progress">
+											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+												Cryptology (Cryptography and Cryptanalysis)<span class="sr-only">100% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+												Steganography<span class="sr-only">90% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+												Pentesting (Web, Application, Network and OS)<span class="sr-only">80% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+												Risk Analysis<span class="sr-only">65% Complete (On fly)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%">
+												Reverse Engineering<span class="sr-only">55% Complete (success)</span>
+											</div>
+										</div>
+										<div class="progress">
+											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+												Forensic engineering<span class="sr-only">50% Complete (success)</span>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -418,24 +529,22 @@ font-size: 16px;">Today is:   &nbsp; <a href="#" class="btn btn-danger square-bt
 					</div>
 					
 				</div>
-				 <!-- /. PAGE INNER  -->
-				</div>
-         <!-- /. PAGE WRAPPER  -->
+				<!-- /. PAGE INNER  -->
+			</div>
+			<!-- /. PAGE WRAPPER  -->
         </div>
-     <!-- /. WRAPPER  -->
+		<!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
     <script src="assets/js/jquery-1.10.2.js"></script>
-      <!-- BOOTSTRAP SCRIPTS -->
+    <!-- BOOTSTRAP SCRIPTS -->
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- METISMENU SCRIPTS -->
     <script src="assets/js/jquery.metisMenu.js"></script>
-     <!-- MORRIS CHART SCRIPTS -->
-     <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+    <!-- MORRIS CHART SCRIPTS -->
+    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
     <script src="assets/js/morris/morris.js"></script>
-      <!-- CUSTOM SCRIPTS -->
+    <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
-    
-   
 </body>
 </html>
